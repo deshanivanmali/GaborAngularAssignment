@@ -9,8 +9,14 @@
     </li>
     <li class="nav-item" *ngIf="userDetails?.length>0">
       <a class="nav-link" [routerLink]="['/mice',{visitedMode:true}]" [routerLinkActive]="['active']">
-       
-        Mice</a>
+       <svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rat">
+          <path d="M12 4c-2.8 0-5 2.2-5 5v5c0 2.8 2.2 5 5 5h0c2.8 0 5-2.2 5-5v-5c0-2.8-2.2-5-5-5z" />
+          <circle cx="16.5" cy="7.5" r="1.5" />
+          <circle cx="7.5" cy="7.5" r="1.5" />
+          <path d="M14 16l-2 2-2-2" />
+          <path d="M12 4c2 2 4 2 6 0" />
+          <path d="M12 4c-2 2-4 2-6 0" />
+        </svg> Mice</a>
     </li>
     <li class="nav-item" *ngIf="userDetails?.length>0" >
       <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active']">Logout</a>

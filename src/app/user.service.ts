@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
   private myBehaviorSubject = new BehaviorSubject<any>('');
+  private profileObs$: BehaviorSubject<any> = new BehaviorSubject(null);
 
 user:any[]=[
   {id:1,userName:"admin",password:"admin123"},
@@ -20,6 +21,7 @@ user:any[]=[
     
     if(loggedInUser!=null){
       this.myBehaviorSubject.next(loggedInUser);
+      this.setProfileObs(loggedInUser)
       return loggedInUser;
     }
     else{
@@ -32,4 +34,11 @@ user:any[]=[
   getValue() {
     return this.myBehaviorSubject.asObservable();
   }
+  getProfileObs(): Observable<any> {
+    return this.profileObs$.asObservable();
+}
+
+setProfileObs(profile: any) {
+    this.profileObs$.next(profile);
+}
 }

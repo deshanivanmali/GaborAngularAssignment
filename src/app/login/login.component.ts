@@ -42,7 +42,8 @@ export class LoginComponent implements OnInit {
   }
  
   ngOnInit(){
-    localStorage.removeItem('userDetails')
+    localStorage.removeItem('userDetails');
+    sessionStorage.removeItem('isVisited')
     this.onReset();
   }
   get f(): { [key: string]: AbstractControl } {

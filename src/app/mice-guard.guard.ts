@@ -7,16 +7,7 @@ import { Observable, flatMap } from 'rxjs';
 })
 export class MiceGuardGuard implements CanActivate {
   constructor(private router:Router,private activeRoute:ActivatedRoute,){}
-  // canActivate( ){
-  //   const hasVisited=this.activeRoute.snapshot.queryParams['visitedMode']=='true'
-  //   if(!hasVisited){
-  //     this.router.navigate(['/mice',{visitedMode:true}])
-  //     return false
-  //   }else{
-  //     return true;
-  //   }
-    
-  // }
+ 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

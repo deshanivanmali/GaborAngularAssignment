@@ -13,12 +13,10 @@ export class HeaderComponent implements OnInit {
  
   }
  async ngOnInit(): Promise<void> {
-  this.userDetails=localStorage.getItem('userDetails');   
-
-  //  await this.service.getValue().subscribe(res=>{
-  //   console.log("22 {}",res);
-  //  })
-   
+  this.userDetails=localStorage.getItem('userDetails');
+  //  await this.service.getProfileObs().subscribe(profile =>{
+  //   console.log("22 {}",profile );
+  //  })  
   
  }
 }
