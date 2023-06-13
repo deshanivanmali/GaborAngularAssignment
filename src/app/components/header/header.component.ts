@@ -7,13 +7,12 @@ import { UserService } from 'src/app/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
- public userDetails?:any
   constructor(private service:UserService){
  
  
   }
  async ngOnInit(): Promise<void> {
-  this.userDetails=localStorage.getItem('userDetails');
+  // this.service.validateRoute(true)
   //  await this.service.getProfileObs().subscribe(profile =>{
   //   console.log("22 {}",profile );
   //  })  

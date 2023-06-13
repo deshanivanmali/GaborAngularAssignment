@@ -1,4 +1,5 @@
 import { Component,OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-mice',
@@ -6,8 +7,11 @@ import { Component,OnInit } from '@angular/core';
   styleUrls: ['./mice.component.scss']
 })
 export class MiceComponent implements OnInit{
-  ngOnInit(): void {    
-    sessionStorage.setItem('isVisited','true')
+  constructor(private service:UserService){
+
+  }
+  async ngOnInit(): Promise<void> {    
+    await this.service.validateRoute(true);
   }
 
 }
