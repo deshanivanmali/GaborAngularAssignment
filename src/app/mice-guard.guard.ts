@@ -11,10 +11,7 @@ export class MiceGuardGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    // return true;
-    const temp=sessionStorage.getItem('isVisited');
-    // const hasVisited=this.activeRoute.snapshot.queryParams['visitedMode']==true || this.activeRoute.snapshot.queryParams['visitedMode']=='true';
-    if(sessionStorage.getItem('isVisited')===undefined || sessionStorage.getItem('isVisited')===null || sessionStorage.getItem('isVisited')===""){  
+     if(sessionStorage.getItem('isVisited')===undefined || sessionStorage.getItem('isVisited')===null || sessionStorage.getItem('isVisited')===""){  
       this.router.navigate(['/mice']);   
       return false
     }
